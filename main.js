@@ -1,32 +1,21 @@
 function playVideo(device) {
   // Hide the choice screen
-  const choiceScreen = document.getElementById("choice-screen");
-  if (choiceScreen) choiceScreen.style.display = "none";
+  document.getElementById("choice-screen").style.display = "none";
 
-  // Show the video screen
+  // Show video screen
   const videoScreen = document.getElementById("video-screen");
-  if (videoScreen) videoScreen.style.display = "block";
+  videoScreen.style.display = "block";
 
-  // Load and play the video
+  // Load and play video
   const video = document.getElementById("intro-video");
   const source = document.getElementById("video-source");
 
-  if (video && source) {
-    source.src = "rock.mp4";
-    video.load();
-    video.play().catch(err => console.error("Playback failed:", err));
+  source.src = "rock.mp4";
+  video.load();
+  video.play();
 
-    // Redirect based on device type after video ends
-    video.onended = function () {
-      if (device === "mobile") {
-        window.location.href = "mobile.html";
-      } else if (device === "desktop") {
-        window.location.href = "desktop.html"; // optional fallback
-      } else {
-        console.warn("Unknown device type. No redirect.");
-      }
-    };
-  } else {
-    console.error("Video or source element not found.");
-  }
+  // When video ends, redirect to corresponding version
+  video.onended = function () {
+    window.location.href = device === "mobile" ? "mobile.html" : "deskstop.html";
+  };
 }
