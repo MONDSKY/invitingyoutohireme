@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio (Mobile)</title>
+  <link rel="stylesheet" href="mobile-style.css" />
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="damdamin.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Dark/Light Mode Toggle -->
+  <button id="theme-toggle">☀️ / 🌙</button>
+
+  <!-- Navigation -->
+  <nav>
+    <button onclick="showSection('home')">🏠</button>
+    <button onclick="showSection('about')">👤</button>
+    <button onclick="showSection('projects')">💻</button>
+    <button onclick="showSection('contact')">📩</button>
+  </nav>
+
+<!-- Sections -->
+  <section id="home" class="section active">
+    <div class="home">
+      <div class="info">
+        <h1>Reymond Servino</h1>
+        <p class="glow">Just a quiet soul trying to heal. A little broken, but still here. Still hoping.</p>
+      </div>
+
+
+
+      <img src="Picsart_25-06-03_02-35-51-145.jpg" alt="Your Photo" />
+    </div>
+  </section>
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>Write a cool paragraph about your background, hobbies, or personality.</p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Project 1</h3>
+      <p>Details and tools used.</p>
+    </div>
+    <div class="project">
+      <h3>Project 2</h3>
+      <p>Explain what it is and why it's awesome.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <a href="https://facebook.com/mondee.servino" target="_blank">Facebook</a>
+    <a href="https://instagram.com/mondeee_xyz" target="_blank">Instagram</a>
+    <a href="mailto:r6544083@email.com">Email Me</a>
+    <form action="mailto:your@email.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Email</button>
+    </form>
+  </section>
+
+  <script src="mobile-script.js"></script>
+</body>
+  </html>
