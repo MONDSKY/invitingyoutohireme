@@ -87,18 +87,33 @@ nav button:hover {
 /* Home Section */
 .home {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  text-align: left;
+  gap: 20px;
+  flex-direction: row; /* image left, text right */
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.home img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .home .info {
-  margin-bottom: 20px;
+  flex: 1;
+  max-width: 60%;
 }
 
 .home h1 {
-  font-size: 2.2em;
+  font-size: 1.8em;
   font-weight: bold;
+  margin-bottom: 5px;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -107,7 +122,6 @@ nav button:hover {
   font-style: italic;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
-
 .home img {
   width: 150px;
   height: 150px;
@@ -115,6 +129,16 @@ nav button:hover {
   border: 3px solid #fff;
   object-fit: cover;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+@media (max-width: 350px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home .info {
+    max-width: 100%;
+  }
 }
 
 /* About, Projects, Contact */
